@@ -51,4 +51,20 @@ export interface Media {
   type: 'image' | 'video';
   postId: string;
   createdAt: Date;
+}
+
+export interface Chat {
+  id: string;
+  participants: User[];
+  messages: {
+    id: string;
+    content: string;
+    sender: User;
+    createdAt: Date;
+  }[];
+  lastMessage: {
+    content: string;
+    createdAt: Date;
+  };
+  unreadCount: number;
 } 
